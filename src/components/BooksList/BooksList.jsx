@@ -6,7 +6,7 @@ const BooksList = props => {
   return (
     <div className={styles.container}>
       <div className={styles.innerContainer}>
-        {props.booksData &&
+        {(props.booksData &&
           props.booksData.map((data, index) => {
             return (
               <BookItem
@@ -15,7 +15,7 @@ const BooksList = props => {
                 setItemHeight={props.setItemHeight}
               />
             );
-          })}
+          })) || <p>No records found.</p>}
       </div>
     </div>
   );
